@@ -13,8 +13,8 @@ function RNGReset() {
 
 const RNG_DATA = {
 	rows: 5,
-	minLayers: 1,
-	maxLayers: 5,
+	minLayers: 2,
+	maxLayers: 7,
 	layers(row) { 
 		let l = Math.max(Math.min(Math.floor(random(getSeed()*row)*RNG_DATA.maxLayers+1), RNG_DATA.maxLayers), RNG_DATA.minLayers);
 		return Math.min(l, row);		
@@ -83,7 +83,7 @@ function globalUpgEffect(target) {
 			}
 		}
 	}
-	return eff;
+	return eff.pow(2);
 }
 
 function globalBuyableEffect(target) {
